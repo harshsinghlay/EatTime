@@ -38,6 +38,9 @@ function Cart() {
         }
     }
 
+    const addMoreItemsHandler = () => {
+        navigate('/menu')
+    }
 
     return (
         <div className='bg-gray-100'>
@@ -62,7 +65,7 @@ function Cart() {
                         </div>}
                 </div>
                 <div className='max-h-[64vh] shadow-lg bg-white lg:w-[40%] lg:block px-6 rounded-lg overflow-hidden'>
-                    <Bill btn2='Checkout Now' func2={checkoutHandler} />
+                    <Bill btn2='Checkout Now' btn1='Continue Shopping' func1={addMoreItemsHandler} func2={checkoutHandler} />
                 </div>
             </section>
         </div>
