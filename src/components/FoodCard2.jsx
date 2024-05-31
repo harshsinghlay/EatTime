@@ -39,7 +39,7 @@ function FoodCard2({ id, name, price, img, quantity, cart = false }) {
                     <h2 className='line-clamp-1 font-semibold text-lg '>{name}</h2>
                     <div className='text-sm pt-1 md:text-base'>
                         <span className='pr-1 '><LiaRupeeSignSolid className='inline' />{`${price} x ${quantity}`}</span>
-                        <span className='text-red-500 pl-2 '><LiaRupeeSignSolid className='inline' />{Number(price * quantity)}</span>
+                        <span className='text-red-500 pl-2 '><LiaRupeeSignSolid className='inline' />{Number(price * quantity)?.toFixed(2)}</span>
                     </div>
                     <div>
                         {cart ? (
