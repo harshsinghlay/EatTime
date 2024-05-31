@@ -38,7 +38,7 @@ function BlogCard({ id, title, content, category, date }) {
                         <span className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center">
                             <span className="ml-1">{date}</span>
                         </span>
-                        <span className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center">
+                        <span className="py-1 text-sm font-regular text-gray-900 mr-1 flex flex-row items-center lg:hover:text-indigo-600">
                             <span className="ml-1"><Link to={`/blogDetails/${id}`}>Read More..</Link> </span>
                         </span>
                     </div>
