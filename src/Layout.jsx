@@ -9,7 +9,7 @@ import { setAllBlogs, setMyBlogs } from './redux/features/blog/blogSlice';
 import { setCart } from './redux/features/food/cartSlice';
 import { setOrders } from './redux/features/food/ordersSlice';
 import { setPaymentMethods } from './redux/features/food/paymentMethodsSlice';
-import { setAddresses } from './redux/features/food/addressesSlice';
+import { setAddresses, setCurrAddress } from './redux/features/food/addressesSlice';
 import { changeUserBackendStatus } from './redux/features/backend/backendSlice';
 import toast, { Toaster } from 'react-hot-toast';
 
@@ -61,10 +61,9 @@ function Layout() {
     }
 
     if (backEndData) {
-      console.log("Backend Data is ", backEndData);
       // setting all blogs
       dispatch(setAllBlogs(getBlogs()))
-      // setting other items
+      // fetching current userdata
       const currentUserData = backEndData?.find((user) => (
         user.userId === userData?.$id
       ))
@@ -96,6 +95,8 @@ function Layout() {
         dispatch(changeUserBackendStatus(false))
       }
     }
+    // This is used to clean checkout page add form
+    dispatch(setCurrAddress(null))
   }
 
   useEffect(() => {
