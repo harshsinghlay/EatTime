@@ -19,7 +19,7 @@ function Footer() {
 
         {/*=========== Top Section ===========*/}
         <section className='lg:flex flex-row-reverse gap-10 lg:pb-6 lg:pt-2'>
-          <div className=' text-white font-poppins text-center flex flex-col items-center gap-4 pb-4 lg:max-w-[25%] '>
+          <div className=' text-white font-poppins text-center flex flex-col items-center gap-5 lg:gap-4 pb-4 lg:max-w-[25%] '>
             <div>
               <h1 className='text-[1.3em] pb-2'>Stay Updated!</h1>
               <p className='text-[.9em] text-gray-400'>Get the latest updates on new menu items and special offers directly in your inbox.</p>
@@ -75,7 +75,7 @@ function Footer() {
         </section >
 
         {/*=========== Bottom Section ===========*/}
-        <section className='pt-4 lg:pt-5 pb-3 lg:pb-4 border-t-2 border-gray-800 lg:flex justify-between'>
+        <section className='pt-4 lg:pt-5 pb-4 border-t-2 border-gray-800 lg:flex justify-between'>
           <p className='text-gray-400 text-center pb-3'>© {new Date().getFullYear()} EatTime. All rights reserved.</p>
           <div className='flex justify-center gap-2'>
             <div className='h-6 w-10 rounded-sm p-1 bg-white flex items-center justify-center'><img className='w-[90%] h-[90%]' src={img.applepay} alt="" /></div>

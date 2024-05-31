@@ -13,7 +13,7 @@ import toast from 'react-hot-toast';
 
 function Payment() {
     const dispatch = useDispatch()
-    const { subTotal } = useBillCalc()
+    const bill = useBillCalc()
     const navigate = useNavigate()
     const [paymentMethod, setPaymentMethod] = useState("");
     const [currPaymentData, setCurrPaymentData] = useState(null)
@@ -41,16 +41,16 @@ function Payment() {
             const orderId = nanoid()
             setOrderProperty("orderId", orderId)
             setOrderProperty("status", "pending")
-            setOrderProperty("price", subTotal)
             setOrderProperty("paymentMethod", paymentMethod)
             setOrderProperty("date", getCurrentDateTime().currentDate)
             setOrderProperty("time", getCurrentDateTime().currentTime)
+            setOrderProperty("bill", {...bill})
             dispatch(addToOrders())
             navigate(`/paymentsuccess/${orderId}`)
         } else {
-            toast.error('Please Select Any Payment Method',{
-                style : {
-                    borderRadius : '30px'
+            toast.error('Please Select Any Payment Method', {
+                style: {
+                    borderRadius: '30px'
                 }
             })
         }
@@ -66,7 +66,7 @@ function Payment() {
         }
     }, [paymentMethod])
 
-    
+
 
     return (
         <div className='bg-gray-100'>

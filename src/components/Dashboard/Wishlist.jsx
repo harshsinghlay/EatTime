@@ -14,7 +14,7 @@ function Wishlist() {
   const toggleDashboardOptions = useOutletContext()
   const wishlist = useSelector(state => state.foods.wishlist)
   const [currentPage, setCurrentPage] = useState(1);
-  const [itemPerPage, setItemPerPage] = useState(6);
+  const [itemPerPage, setItemPerPage] = useState(8);
   const lastItemIndex = currentPage * itemPerPage;
   const firstItemIndex = lastItemIndex - itemPerPage;
   const itemOnCurrPage = wishlist?.slice(firstItemIndex, lastItemIndex)
@@ -36,7 +36,7 @@ function Wishlist() {
 
   return (
 
-    <div className='flex flex-col gap-5 py-10'>
+    <div className='flex flex-col gap-5 py-4 lg:py-10'>
 
       {/*======== Title and Button To Toggle Dashboard Options ========*/}
       <section className=' flex justify-between items-center  px-4 sm:px-6 font-poppins text-gray-800'>
@@ -46,7 +46,7 @@ function Wishlist() {
         </div>
         <div className='block lg:hidden'>
           <button className=' px-3 sm:px-5 md:text-base py-2  rounded-full  sm:font-light  ' onClick={toggleDashboardOptions && toggleDashboardOptions}>
-            <span><HiBars3 className='text-2xl sm:4xl ' /></span>
+            <span><HiBars3 className='text-3xl sm:4xl active:text-orange-400' /></span>
           </button>
         </div>
       </section>
@@ -63,16 +63,16 @@ function Wishlist() {
               ))
             }
           </main>) :
-          <div className='text-xl  text-gray-500 tracking-wider min-h-[30vh] flex justify-center items-center'>No Items Yet</div>
+          <div className='text-xl  text-gray-500 tracking-wider min-h-[35vh] lg:min-h-[30vh] flex justify-center items-center'>No Items Yet</div>
         }
       </section>
 
       {/*======== Pagination Buttons ========*/}
-      <section className={`flex flex-col gap-3 lg:flex-row justify-between items-center  px-6 font-poppins text-gray-800 text-sm text-normal sm:text-base`}>
+      <section className={`flex flex-col gap-4 sm:gap-3 lg:flex-row justify-between items-center  px-6 font-poppins text-gray-800 text-sm text-normal sm:text-base`}>
         <div>{`Showing ${currentPage}-${totalPages} of ${wishlist?.length} Items`}</div>
         <div className='flex items-center gap-4'>
-          <buttons className="px-3 py-3 bg-white rounded-full active:bg-gray-200" onClick={prevPage}><IoIosArrowBack /></buttons>
-          <buttons className="px-3 py-3 bg-white rounded-full active:bg-gray-200" onClick={nextPage}><IoIosArrowForward /></buttons>
+          <buttons className="p-4 bg-white rounded-full active:bg-gray-200" onClick={prevPage}><IoIosArrowBack /></buttons>
+          <buttons className="p-4 bg-white rounded-full active:bg-gray-200" onClick={nextPage}><IoIosArrowForward /></buttons>
         </div>
       </section>
 

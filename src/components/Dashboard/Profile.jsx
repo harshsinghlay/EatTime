@@ -5,6 +5,7 @@ import authService from '../../appwrite/auth'
 import { storeLogout } from '../../redux/features/auth/authSlice'
 import { useDispatch, useSelector } from 'react-redux';
 import appwriteService from '../../appwrite/service'
+import toast from 'react-hot-toast';
 
 function Profile() {
   const [loading, setLoading] = useState(false)
@@ -23,7 +24,7 @@ function Profile() {
   const navigate = useNavigate()
 
   const dataForSent = {
-    userId: userData?.userId,
+    userId: userData?.$id,
     orders: JSON.stringify(orders),
     cart: JSON.stringify(cart),
     wishlist: JSON.stringify(wishlist),
@@ -54,6 +55,11 @@ function Profile() {
       authService.logout().then((res) => {
         if (res) {
           setLoading(false)
+          toast.success("Logout Successfully!", {
+            style: {
+                borderRadius: '30px'
+            }
+        })
           dispatch(storeLogout())
           navigate('/')
         }
@@ -74,7 +80,7 @@ function Profile() {
         </div>
         <div className='block lg:hidden'>
           <button className=' px-3 sm:px-5 md:text-base py-2  rounded-full  sm:font-light  ' onClick={toggleDashboardOptions && toggleDashboardOptions}>
-            <span><HiBars3 className='text-2xl sm:4xl ' /></span>
+            <span><HiBars3 className='text-3xl sm:4xl active:text-orange-400 ' /></span>
           </button>
         </div>
       </section>

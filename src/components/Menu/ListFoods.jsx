@@ -9,7 +9,7 @@ function ListFoods({ toggleFilter }) {
     const dispatch = useDispatch()
     const filteredFoods = useSelector(state => state.foods.filteredFoods)
     const [currentPage, setCurrentPage] = useState(1);
-    const [foodsPerPage, setFoodsPerPage] = useState(6);
+    const [foodsPerPage, setFoodsPerPage] = useState(8);
     const lastFoodIndex = currentPage * foodsPerPage;
     const firstFoodIndex = lastFoodIndex - foodsPerPage;
     const foodsOnCurrPage = filteredFoods.slice(firstFoodIndex, lastFoodIndex)
@@ -47,7 +47,7 @@ function ListFoods({ toggleFilter }) {
                     </div>
                 </div>
                 <div className='block lg:hidden'>
-                    <button className='flex items-center text-xs px-3 sm:px-5 md:text-base py-2 gap-1 sm:gap-4 rounded-full bg-orange-400 sm:font-light text-white  ' onClick={toggleFilter}>
+                    <button className='flex items-center text-sm px-3 sm:px-5 md:text-base py-3 gap-1 sm:gap-4 rounded-full bg-orange-400 sm:font-light text-white  ' onClick={toggleFilter}>
                         <span><HiBars3 className='text-xl sm:4xl ' /></span>
                         <span className='tracking-wider'>FILTER PRODUCTS</span>
                     </button>
@@ -72,8 +72,8 @@ function ListFoods({ toggleFilter }) {
                 <div className=' bg-gray-100 flex flex-col gap-3 lg:flex-row justify-between items-center py-5 px-6 font-poppins text-gray-800 text-sm text-normal sm:text-base'>
                     <div>Showing {currentPage}-{totalPages} of {filteredFoods.length} items</div>
                     <div className='flex items-center gap-2'>
-                        <button onClick={prevPage} className="px-4 py-4 bg-white rounded-sm"><IoIosArrowBack /></button>
-                        <button onClick={nextPage} className="px-4 py-4 bg-white rounded-sm"><IoIosArrowForward /></button>
+                        <button onClick={prevPage} className="p-4 bg-white rounded-sm"><IoIosArrowBack /></button>
+                        <button onClick={nextPage} className="p-4 bg-white rounded-sm"><IoIosArrowForward /></button>
                     </div>
                 </div>
             </div>

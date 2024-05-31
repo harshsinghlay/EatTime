@@ -12,7 +12,7 @@ function MyBlogs() {
                     {blogs?.length > 0 ?
                         (<div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6'>
                             {blogs?.map((item, index) => (
-                                <div className='h-[52vh]  border-black overflow-hidden rounded-md bg-white hover:border-[1px]  md:hover:scale-105 transition-transform duration-300 '>
+                                <div className='h-[52vh] shadow-gray-400 shadow-md border-black overflow-hidden rounded-sm bg-white lg:hover:border-[1px]  lg::hover:scale-105 transition-transform duration-300 '>
                                     <BlogCard {...item} />
                                 </div>
                             ))}

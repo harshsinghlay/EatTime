@@ -52,7 +52,7 @@ function Cart() {
                     {cart.length > 0 ?
                         (<div className=' flex flex-col gap-5'>
                             {cart?.map((item) => (
-                                <div key={item.id} className='shadow-lg rounded-lg hover:border-[1px] border-black' >
+                                <div key={item.id} className='shadow-lg rounded-lg lg:hover:border-[1px] border-black' >
                                     <FoodCard2 cart={true} {...item} />
                                 </div>
                             ))}

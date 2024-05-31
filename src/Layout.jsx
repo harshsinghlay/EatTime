@@ -11,7 +11,7 @@ import { setOrders } from './redux/features/food/ordersSlice';
 import { setPaymentMethods } from './redux/features/food/paymentMethodsSlice';
 import { setAddresses } from './redux/features/food/addressesSlice';
 import { changeUserBackendStatus } from './redux/features/backend/backendSlice';
-import { Toaster } from 'react-hot-toast';
+import toast, { Toaster } from 'react-hot-toast';
 
 function Layout() {
   const dispatch = useDispatch();
@@ -70,6 +70,7 @@ function Layout() {
         dispatch(setMyBlogs(myBlogs))
         dispatch(setWishlist(wishlist))
         dispatch(changeUserBackendStatus())
+        console.log("User is in backend");
       } else {
         console.log("User is not in backend");
         dispatch(setCart([]))
@@ -84,10 +85,11 @@ function Layout() {
   }
 
   useEffect(() => {
-    authService?.getCurrentUser().then((userData) => {
+    authService.getCurrentUser().then((userData) => {
       if (userData) {
         authService.logout().then((res) => {
           if (res) {
+            console.log("Logout successfully");
             dispatch(storeLogout())
           }
         })

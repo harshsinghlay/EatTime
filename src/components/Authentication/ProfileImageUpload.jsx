@@ -27,7 +27,6 @@ function ProfileImageUpload({ name, register, onChange, control }) {
   return (
     <div className='flex flex-col items-center gap-3'>
       <div className="relative inline-block">
-
         <div {...getRootProps()} className="cursor-pointer">
           {/*======= Image =======*/}
           <div>
@@ -46,14 +45,10 @@ function ProfileImageUpload({ name, register, onChange, control }) {
             <label id={name} className="absolute bottom-0 end-0 block rounded-full ring-2 ring-white text-3xl sm:text-2xl bg-white cursor-pointer text-gray-600 active:text-black">
               <TbCameraPlus />
             </label>
-            <input className='hidden' type='file' control={control} {...register(name, { required: "Profile Pic is Required" })} {...getInputProps()} />
+            <input   className='hidden' type='file' control={control} {...register(name, { required: "Profile Pic is Required" })} {...getInputProps()} />
           </div>
         </div>
       </div>
-
-      {/* {error && (
-        <p className="text-red-600 text-xs text-center">{error}</p>
-      )} */}
     </div>
   );
 }

@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { deleteBlog as deleteBlogStore } from "../../redux/features/blog/blogSlice";
 import Button from "./Button";
 import parse from 'html-react-parser'
+import toast from "react-hot-toast";
 
 
 export default function Blog() {
@@ -45,26 +46,26 @@ export default function Blog() {
     return blog ? (
         <div className="py-10 max-w-[91%] mx-auto">
             {/*============ Blog Image ============*/}
-            <div className="w-full flex justify-center mb-4 relative border rounded-md p-4">
-                <div className="h-[80vw] md:h-[35vw] w-full rounded-md bg-cover bg-center"
+            <div className="w-full flex justify-center mb-4 relative rounded-sm overflow-hidden">
+                <div className="h-[80vw] md:h-[35vw] w-full  bg-cover bg-center"
                     style={{ backgroundImage: `url(${appwriteService.getFilePreview(blog?.id)})` }}
                 >
                 </div>
                 {isAuthor && (
-                    <div className="absolute right-8 top-8">
-                        <Link to={`/blogs/editblog/${blog?.id}`}>
-                            <Button bgColor="bg-green-500 text-sm" className="mr-3">
+                    <div className="absolute right-6  lg:right-8 top-6 lg:top-8 ">
+                        <Link to={`/editblog/${blog?.id}`}>
+                            <Button bgColor="bg-green-500 text-sm py-2" className="mr-3">
                                 Edit
                             </Button>
                         </Link>
-                        <Button bgColor="bg-red-500 text-sm" onClick={deleteBlog}>
+                        <Button bgColor="bg-red-500 text-sm py-2" onClick={deleteBlog}>
                             Delete
                         </Button>
                     </div>
                 )}
             </div>
             {/*============ Blog Content and Author ========*/}
-            <div className="w-full flex-col md:flex-row flex py-4 px-6 gap-5 ">
+            <div className="w-full flex-col md:flex-row flex py-4 px-1 gap-5 ">
                 <section className="grow">
                     <div className="w-full mb-4 ">
                         <h1 className="text-2xl font-bold">{blog.title}</h1>

@@ -2,16 +2,16 @@ import React, { useId } from 'react'
 
 function Select({
     options,
-    lable,
+    label,
     className,
     ...props
 }, ref) {
     const id = useId()
     return (
         <div className='w-full'>
-            {lable && <lable
+            {label && <label
                 htmlfor={id}
-                className=''></lable>}
+                className=''>{label}</label>}
             <select
                 {...props}
                 id={id}

@@ -20,7 +20,7 @@ function TogglingNavbar({ showToggleNav, toggleNavbar }) {
 
 
     return (
-        <section className={`overflow-y-scroll  h-[100vh] top-0 w-[80%] sm:w-[50%] md:w-[40%] lg:hidden text-black border-2 border-black bg-white duration-500 pt-14 px-1 absolute ${showToggleNav ? "left-0 " : 'left-[-100%] '}`}>
+        <section className={`z-10 overflow-y-scroll  h-[100vh] top-0 w-[80%] sm:w-[50%] md:w-[40%] lg:hidden text-black border-2 border-black bg-white duration-500 pt-14 px-1 absolute ${showToggleNav ? "left-0 " : 'left-[-100%] '}`}>
 
             {/*======== Button For Toggle ========*/}
             <div className='flex justify-end '>

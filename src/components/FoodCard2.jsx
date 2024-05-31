@@ -38,8 +38,8 @@ function FoodCard2({ id, name, price, img, quantity, cart = false }) {
                 <div className='py-2 sm:py-3  px-2 flex flex-col justify-between'>
                     <h2 className='line-clamp-1 font-semibold text-lg '>{name}</h2>
                     <div className='text-sm pt-1 md:text-base'>
-                        <span className='pr-1 '><LiaRupeeSignSolid className='inline' />{price} x {quantity}</span>
-                        <span className='text-red-500 pl-2 '><LiaRupeeSignSolid className='inline' />{price * quantity}</span>
+                        <span className='pr-1 '><LiaRupeeSignSolid className='inline' />{`${price} x ${quantity}`}</span>
+                        <span className='text-red-500 pl-2 '><LiaRupeeSignSolid className='inline' />{Number(price * quantity)}</span>
                     </div>
                     <div>
                         {cart ? (

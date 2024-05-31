@@ -14,6 +14,7 @@ const backendSlice = createSlice({
     },
 
     changeUserBackendStatus: (state) => {
+      console.log("Backend status changed");
       state.isUserInBackend = true;
     },
   },

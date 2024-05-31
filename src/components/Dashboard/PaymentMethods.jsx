@@ -28,7 +28,7 @@ const PaymentMethodsCard = ({ id, mode, value, exp }) => {
       <div className='line-clamp-1  sm:text-center'>{value || "N/A"}</div>
       <div className='line-clamp-1   sm:text-center'>{exp || "N/A"}</div>
       <div className='line-clamp-1 sm:text-center'>***</div>
-      <span className='absolute transform -translate-y-1/2 top-1/2  overflow-hidden right-6 text-xl' onClick={removePaymentMethod}><MdDeleteForever /></span>
+      <span className='absolute transform -translate-y-1/2 top-1/2  overflow-hidden right-6 text-xl pt-2' onClick={removePaymentMethod}><MdDeleteForever /></span>
     </div>
   )
 }
@@ -68,7 +68,7 @@ function Orders() {
         </div>
         <div className='block lg:hidden'>
           <button className=' px-3 sm:px-5 md:text-base py-2  rounded-full  sm:font-light  ' onClick={toggleDashboardOptions && toggleDashboardOptions}>
-            <span><HiBars3 className='text-2xl sm:4xl ' /></span>
+            <span><HiBars3 className='text-3xl sm:4xl active:text-orange-400' /></span>
           </button>
         </div>
       </section>
@@ -85,16 +85,16 @@ function Orders() {
               ))}
             </div>
           </main>) :
-          <div className='text-xl  text-gray-500 tracking-wider min-h-[30vh] flex justify-center items-center'>No Saved Payment Methods</div>}
+          <div className='text-xl  text-gray-500 tracking-wider min-h-[35vh] lg:min-h-[30vh] flex justify-center items-center'>No Saved Payment Methods</div>}
       </section>
 
 
       {/*======== Pagination Buttons ========*/}
-      <section className={`flex flex-col gap-3 lg:flex-row justify-between items-center  px-6 font-poppins text-gray-800 text-sm text-normal sm:text-base`}>
+      <section className={`flex flex-col gap-4 sm:gap-3 lg:flex-row justify-between items-center  px-6 font-poppins text-gray-800 text-sm text-normal sm:text-base`}>
         <div>{`Showing ${currentPage}-${totalPages} of ${paymentMethods?.length} PaymentMethods`}</div>
         <div className='flex items-center gap-4'>
-          <buttons className="px-3 py-3 bg-white rounded-full active:bg-gray-200" onClick={prevPage}><IoIosArrowBack /></buttons>
-          <buttons className="px-3 py-3 bg-white rounded-full active:bg-gray-200" onClick={nextPage}><IoIosArrowForward /></buttons>
+          <buttons className="p-4 bg-white rounded-full active:bg-gray-200" onClick={prevPage}><IoIosArrowBack /></buttons>
+          <buttons className="p-4 bg-white rounded-full active:bg-gray-200" onClick={nextPage}><IoIosArrowForward /></buttons>
         </div>
       </section>
     </div>

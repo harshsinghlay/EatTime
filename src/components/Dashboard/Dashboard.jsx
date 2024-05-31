@@ -24,7 +24,7 @@ function Dashboard() {
     return (
         <section className='relative bg-gray-100'>
 
-            <div className='max-w-[91%] mx-auto grid grid-cols-12 gap-7 py-10'>
+            <div className='max-w-[91%] mx-auto grid grid-cols-12 gap-7 py-8 lg:py-10'>
 
                 {/*========= DashBoard Options =========*/}
                 <section className='hidden lg:block col-span-3 my-8 rounded-lg bg-white shadow-lg overflow-hidden' >
@@ -32,7 +32,7 @@ function Dashboard() {
                 </section>
 
                 {/*========= Toggling Dashboard Options =========*/}
-                < section className={`overflow-y-scroll border-[1px] border-gray-400  h-[100vh] w-[75%] sm:w-[50%] md:w-[40%] bg-gray-100 lg:rounded-lg lg:shadow-md duration-500 absolute top-0 ${showDashboardOptions ? "left-0 " : 'left-[-100%] '}`} >
+                < section className={`z-10 overflow-y-scroll border-[1px] border-gray-400  h-[100vh] w-[75%] sm:w-[50%] md:w-[40%] bg-gray-100 lg:rounded-lg lg:shadow-md duration-500 absolute top-0 ${showDashboardOptions ? "left-0 " : 'left-[-100%] '}`} >
                     <DashboardOptions  />
                 </section>
 

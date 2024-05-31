@@ -60,7 +60,7 @@ function Menu() {
       </div>
 
       {/*============== Toggling Filter ==============*/}
-      < div className={`overflow-scroll  border-[1px] border-gray-400  h-[100vh] w-[80%] sm:w-[50%] md:w-[40%] bg-white px-4 pt-6 pb-14 duration-500 absolute top-0 ${showToggleFilter ? "right-0" : 'right-[-100%] '}`} >
+      < div className={`overflow-scroll  border-y-[1px] border-gray-400  h-screen w-[80%] sm:w-[50%] md:w-[40%] bg-white px-4 pt-28 pb-14 duration-500 fixed overflow-y-auto top-0 ${showToggleFilter ? "right-0" : 'right-[-100%] '}`} >
         <TogglingFilter toggleFilter={toggleFilter} />
       </div>
 

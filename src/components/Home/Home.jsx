@@ -29,7 +29,7 @@ function Home() {
                 <section >
                     <div className='max-w-[92%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-y-5 xl:gap-x-2 py-7 xl:py-12 xl:text-lg'>
                         <div className='flex gap-4 sm:flex-col sm:items-center md:flex-row md:justify-center  lg:flex-col xl:flex-row  font-poppins group  cursor-pointer'>
-                            <div className='bg-gray-100 p-5 rounded-full text-gray-500 group-hover:bg-orange-400 group-hover:text-white duration-300'>
+                            <div className='bg-gray-100 p-5 rounded-full text-gray-500 lg:group-hover:bg-orange-400 lg:group-hover:text-white duration-300'>
                                 <LiaRocketSolid size={40} />
                             </div>
                             <div className='flex flex-col justify-center sm:items-center md:items-start lg:items-center xl:items-start gap-1 '>
@@ -38,7 +38,7 @@ function Home() {
                             </div>
                         </div>
                         <div className='flex gap-4 sm:flex-col sm:items-center md:flex-row md:justify-center lg:flex-col xl:flex-row font-poppins group cursor-pointer'>
-                            <div className='bg-gray-100 p-5 rounded-full text-gray-500 group-hover:bg-orange-400 group-hover:text-white duration-300'>
+                            <div className='bg-gray-100 p-5 rounded-full text-gray-500 lg:group-hover:bg-orange-400 lg:group-hover:text-white duration-300'>
                                 <LiaRupeeSignSolid size={40} />
                             </div>
                             <div className='flex flex-col justify-center sm:items-center md:items-start lg:items-center xl:items-start gap-1 '>
@@ -47,7 +47,7 @@ function Home() {
                             </div>
                         </div>
                         <div className='flex gap-4 sm:flex-col sm:items-center md:flex-row md:justify-center lg:flex-col xl:flex-row font-poppins group cursor-pointer'>
-                            <div className='bg-gray-100 p-5 rounded-full text-gray-500 group-hover:bg-orange-400 group-hover:text-white duration-300'>
+                            <div className='bg-gray-100 p-5 rounded-full text-gray-500 lg:group-hover:bg-orange-400 lg:group-hover:text-white duration-300'>
                                 <Ri24HoursLine size={40} />
                             </div>
                             <div className='flex flex-col justify-center sm:items-center md:items-start lg:items-center xl:items-start gap-1 '>
@@ -56,7 +56,7 @@ function Home() {
                             </div>
                         </div>
                         <div className='flex gap-4 sm:flex-col sm:items-center md:flex-row md:justify-center lg:flex-col xl:flex-row font-poppins group cursor-pointer'>
-                            <div className='bg-gray-100 p-5 rounded-full text-gray-500 group-hover:bg-orange-400 group-hover:text-white duration-300'>
+                            <div className='bg-gray-100 p-5 rounded-full text-gray-500 lg:group-hover:bg-orange-400 lg:group-hover:text-white duration-300'>
                                 <PiBowlSteam size={40} />
                             </div>
                             <div className='flex flex-col justify-center sm:items-center md:items-start lg:items-center xl:items-start gap-1 '>
@@ -108,10 +108,10 @@ function Home() {
                 {/*============= Discount Offers with unequal sizes =============*/}
                 <section >
                     <div className='bg-white py-20'>
-                        <div className=' max-w-[91%] min-h-[470vw] sm:min-h-[170vw] md:min-h-[48vw] mx-auto grid grid-cols-12 grid-rows-6 sm:grid-rows-4 md:grid-rows-2 gap-7 text-white text-[4.2vw] sm:text-[2.7vw] md:text-[1.5vw]'>
+                        <div className=' max-w-[91%] min-h-[470vw] sm:min-h-[170vw] md:min-h-[48vw] mx-auto grid grid-cols-12 grid-rows-6 sm:grid-rows-4 md:grid-rows-2 gap-7 text-white text-[5vw] sm:text-[2.7vw] md:text-[1.5vw]'>
 
                             <section className="relative  sm:row-start-3 col-span-12 sm:col-span-6 md:row-start-1 md:col-start-1 md:col-end-4 bg-cover mx-9 sm:m-0 flex justify-center items-end group" style={{ backgroundImage: `url(${img.img1})` }}>
-                                <div class="absolute w-full bg-black  h-full opacity-30 flex justify-center items-end      lg:group-hover:opacity-0 duration-200">
+                                <div class="absolute w-full bg-black  h-full opacity-30 flex justify-center items-end   lg:group-hover:opacity-0 duration-200">
                                 </div>
                                 <div className="absolute flex justify-center items-end h-full w-full ">
                                     <Link to='/menu/dessert' className="font-poppins text-white  pb-8 text-center lg:group-hover:text-orange-400">
@@ -125,7 +125,7 @@ function Home() {
                                 <div className="absolute flex h-full w-full">
                                     <div className="font-poppins text-white  pl-8 pt-8 ">
                                         <p className='text-[1.8em] sm:text-[2.8em] font-semibold pb-3'><span className='text-[.5em] block font-normal text-gray-300'>NEW COLLECTION</span><span className='block'>ORIGINAL</span> <span className='-mt-2  lg:-mt-5 block'>AMERICAN</span> <span className='-mt-2 lg:-mt-5  block'>BURGER</span> <span className='block text-[.7em] font-extralight'>from $6.99</span></p>
-                                        <Link to='/menu/burger' className='px-[1em] py-[.2em] sm:px-[2.4em] sm:py-[.4em] bg-orange-400 rounded-lg text-[1em] lg:hover:scale-95 active:text-black lg:hover:bg-orange-500'>Order Now</Link>
+                                        <Link to='/menu/burger' className='px-[1em] py-[.2em] sm:px-[2.4em] sm:py-[.4em] bg-orange-400 rounded-sm text-[1em] lg:hover:scale-95 active:text-black lg:hover:bg-orange-500'>Order Now</Link>
                                     </div>
                                 </div>
                             </section>

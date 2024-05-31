@@ -24,6 +24,7 @@ export class Service {
     blogs,
     wishlist,
   }) {
+    console.log("User id is ", userId);
     try {
       const response = await this.databases.createDocument(
         config.appwriteDatabaseId,
@@ -55,7 +56,7 @@ export class Service {
         config.appwriteDatabaseId,
         config.appwriteCollectionId
       );
-      console.log("fetchedUserData is",fetchUsersData);
+      console.log("fetchedUserData is", fetchUsersData);
       return fetchUsersData;
     } catch (error) {
       console.log("Appwrite service :: getUsersData :: error: ", error);
@@ -68,7 +69,7 @@ export class Service {
     { cart, orders, paymentMethods, addresses, blogs, wishlist }
   ) {
     try {
-      const updatedPost = await this.databases.updateDocument(
+      const updateData = await this.databases.updateDocument(
         config.appwriteDatabaseId,
         config.appwriteCollectionId,
         userId,
@@ -81,13 +82,12 @@ export class Service {
           wishlist,
         }
       );
-      console.log("Post updated: (in appwrite.config.js)");
-      return updatedPost;
+      console.log("Data updated: (in appwrite.config.js)");
+      return updateData;
     } catch (error) {
       console.log("Appwrite service :: updateUserData :: error: ", error);
     }
   }
-
 
   //  ================ File Upload Services =============
 
