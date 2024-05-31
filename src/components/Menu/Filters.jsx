@@ -221,7 +221,7 @@ function Filters() {
           <section className='px-4 py-3 border-b-2 border-gray-200'>
             <section className='font-poppins flex gap-6'>
               {/* <button className=' px-4 py-1 text-sm xl:px-7  xl:py-2 bg-gray-300 rounded-sm '>Apply</button> */}
-              <button onClick={resetFilters} className=' px-4 py-1 text-sm xl:px-7  xl:py-2 bg-gray-300 rounded-sm '>Reset </button>
+              <button onClick={resetFilters} className=' px-4 py-1  xl:px-7  xl:py-2 bg-gray-300 rounded-sm '>Reset </button>
             </section>
           </section>
 

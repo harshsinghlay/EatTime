@@ -56,15 +56,18 @@ function ListFoods({ toggleFilter }) {
 
             {/*=============== Foods Listing ===============*/}
             <div>
-                <main className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 '>
-                    {
-                        foodsOnCurrPage?.map((food) => (
-                            <div key={food.id} className='rounded-lg max-h-[69vw] sm:max-h-[45vw] lg:max-h-[30vw] xl:max-h-[25vw]'>
-                                <FoodCard1 food={food} />
-                            </div>
-                        ))
-                    }
-                </main>
+                {foodsOnCurrPage?.length > 0 ?
+                    (<main className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 '>
+                        {
+                            foodsOnCurrPage?.map((food) => (
+                                <div key={food.id} className='rounded-lg max-h-[69vw] sm:max-h-[45vw] lg:max-h-[30vw] xl:max-h-[25vw]'>
+                                    <FoodCard1 food={food} />
+                                </div>
+                            ))
+                        }
+                    </main>) :
+                    <div className='min-h-[10vh] xl:min-h-[30vh] flex justify-center items-center text-center text-xl text-gray-500 tracking-wider'>No Items Found</div>
+                }
             </div>
 
             {/*=============== Pagination Buttons ===============*/}
