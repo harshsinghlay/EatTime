@@ -33,6 +33,7 @@ import Checkout from './pages/Checkout.jsx'
 import Payment from './pages/Payment.jsx'
 import PaymentSuccess from './pages/PaymentSuccess.jsx'
 import CancelOrder from './pages/CancelOrder.jsx'
+import Error from './pages/Error.jsx'
 
 
 const router = createBrowserRouter(createRoutesFromElements(
@@ -63,6 +64,7 @@ const router = createBrowserRouter(createRoutesFromElements(
         <Route path='editblog/:blogId' element={<EditBlog />} />
         <Route path='addblog' element={<AddBlog />} />
         <Route path='blogDetails/:blogId' element={<BlogDetails />} />
+        <Route path='*' element={<Error />} />
     </Route>
 ))
 

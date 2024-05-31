@@ -1,6 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  // address contains curr address
+  currAddress: null,
+  // addresses contains saved addresses
   addresses: [],
 };
 
@@ -8,6 +11,9 @@ const addressesSlice = createSlice({
   name: "addresses",
   initialState,
   reducers: {
+    setCurrAddress: (state, action) => {
+      state.currAddress = action.payload;
+    },
     setAddresses: (state, action) => {
       state.addresses = action.payload;
     },
@@ -28,6 +34,6 @@ const addressesSlice = createSlice({
   },
 });
 
-export const { setAddresses, addToAddresses, removeFromAddresses } =
+export const { setAddresses, setCurrAddress, addToAddresses, removeFromAddresses } =
   addressesSlice.actions;
 export default addressesSlice.reducer;

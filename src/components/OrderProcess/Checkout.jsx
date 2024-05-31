@@ -2,9 +2,9 @@ import React, { useEffect, useRef, useState } from 'react'
 import { Bill } from '../index'
 import ProgressBar from './ProgressBar'
 import { useForm } from 'react-hook-form'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { addOrderProperty } from '../../redux/features/food/ordersSlice'
-import { addToAddresses } from '../../redux/features/food/addressesSlice'
+import { addToAddresses, setCurrAddress } from '../../redux/features/food/addressesSlice'
 import { useNavigate } from 'react-router'
 
 
@@ -14,7 +14,7 @@ function Checkout() {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     const formRef = useRef()
-
+    const address = useSelector(state => state.addresses.currAddress)
 
     const setOrderProperty = (key, value) => {
         dispatch(addOrderProperty({ key: key, value: value }));
@@ -89,6 +89,19 @@ function Checkout() {
     const backToCartHandler = () => {
         navigate("/cart")
     }
+
+    useEffect(() => {
+        // Set form fields with address properties from the store
+        if (address) {
+            Object.keys(address).forEach((key) => {
+                setValue(key, address[key]);
+            });
+        }
+        // Clean up by setting the current form data to the store on unmount
+        return () => {
+            dispatch(setCurrAddress(watch()));
+        };
+    }, []);
 
     useEffect(() => {
         if (isSubmitSuccessful) {

@@ -29,6 +29,7 @@ import BlogForm from "./Blog/BlogForm";
 import ScrollToTop from "./ScrollToTop";
 import Rating from "./Rating/Rating";
 import CancelOrder from './OrderProcess/CancelOrder'
+import Error from "./Error/Error";
 
 export {
   Header,
@@ -62,4 +63,5 @@ export {
   BlogForm,
   ScrollToTop,
   Rating,
+  Error
 };

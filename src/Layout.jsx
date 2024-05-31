@@ -40,15 +40,28 @@ function Layout() {
   }
 
   const setStoreData = () => {
+    function removeDuplicatesById(array) {
+      const uniqueIds = new Set();
+      return array.filter(item => {
+        if (!uniqueIds.has(item.id)) {
+          uniqueIds.add(item.id);
+          return true;
+        }
+        return false;
+      });
+    }
+
     const getBlogs = () => {
       let items = [];
       backEndData.forEach(obj => {
         const { allBlogs } = JSON.parse(obj.blogs)
         items = items.concat(allBlogs)
       });
-      return items;
+      return removeDuplicatesById(items)
     }
+
     if (backEndData) {
+      console.log("Backend Data is ", backEndData);
       // setting all blogs
       dispatch(setAllBlogs(getBlogs()))
       // setting other items
@@ -56,6 +69,7 @@ function Layout() {
         user.userId === userData?.$id
       ))
       if (currentUserData) {
+        console.log("Current User is ", currentUserData);
         const cart = JSON.parse(currentUserData?.cart)
         const orders = JSON.parse(currentUserData?.orders)
         const addresses = JSON.parse(currentUserData?.addresses)
@@ -69,7 +83,7 @@ function Layout() {
         dispatch(setAddresses(addresses))
         dispatch(setMyBlogs(myBlogs))
         dispatch(setWishlist(wishlist))
-        dispatch(changeUserBackendStatus())
+        dispatch(changeUserBackendStatus(true))
         console.log("User is in backend");
       } else {
         console.log("User is not in backend");
@@ -78,8 +92,8 @@ function Layout() {
         dispatch(setPaymentMethods([]))
         dispatch(setAddresses([]))
         dispatch(setMyBlogs([]))
-        dispatch(setAllBlogs([]))
         dispatch(setWishlist([]))
+        dispatch(changeUserBackendStatus(false))
       }
     }
   }

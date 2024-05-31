@@ -3,13 +3,15 @@ import OrderSummary from './OrderSummary'
 import ProgressBar from './ProgressBar'
 import { useDispatch } from 'react-redux'
 import { setCart } from '../../redux/features/food/cartSlice'
+import { setCurrAddress } from '../../redux/features/food/addressesSlice'
 
 function PaymentSuccess() {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        dispatch(setCart([]))
         return () => {
-            dispatch(setCart([]))
+            dispatch(setCurrAddress(null))
         }
     }, [])
 

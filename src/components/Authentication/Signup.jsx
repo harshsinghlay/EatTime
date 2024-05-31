@@ -7,6 +7,7 @@ import { useForm, Controller } from 'react-hook-form'
 import toast from 'react-hot-toast'
 import ProfileImageUpload from './ProfileImageUpload'
 import appwriteService from '../../appwrite/service'
+import { setBackendDataToStore } from '../../redux/features/backend/backendSlice'
 
 function Signup() {
     const navigate = useNavigate();
@@ -14,6 +15,19 @@ function Signup() {
     const dispatch = useDispatch()
     const { register, handleSubmit, formState: { errors }, control } = useForm()
     const [loading, setLoading] = useState(false)
+
+    const getDataFromBackend = async () => {
+        try {
+            const data = await appwriteService.getData([]);
+            if (data) {
+                if (data?.documents.length > 0) {
+                    dispatch(setBackendDataToStore(data.documents))
+                }
+            }
+        } catch (error) {
+            console.error("Error fetching data from backend", error);
+        }
+    }
 
 
     const create = async (data) => {
@@ -33,6 +47,7 @@ function Signup() {
                         })
                         setLoading(false)
                         dispatch(storeLogin({ ...currUser, userImage: file?.$id }))
+                        getDataFromBackend()
                         navigate("/")
                     }
                 }

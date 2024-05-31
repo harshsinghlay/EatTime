@@ -13,12 +13,16 @@ const backendSlice = createSlice({
       state.data = action.payload;
     },
 
-    changeUserBackendStatus: (state) => {
-      console.log("Backend status changed");
-      state.isUserInBackend = true;
+    changeUserBackendStatus: (state, action) => {
+      if (action.payload) {
+        state.isUserInBackend = true;
+      } else {
+        state.isUserInBackend = false;
+      }
     },
   },
 });
 
-export const { setBackendDataToStore, changeUserBackendStatus } = backendSlice.actions;
+export const { setBackendDataToStore, changeUserBackendStatus } =
+  backendSlice.actions;
 export default backendSlice.reducer;

@@ -5,8 +5,8 @@ const initialState = {
   myBlogs: [],
 };
 
-const addressesSlice = createSlice({
-  name: "addresses",
+const blogSlice = createSlice({
+  name: "blogs",
   initialState,
   reducers: {
     addBlog: (state, action) => {
@@ -31,14 +31,16 @@ const addressesSlice = createSlice({
       );
     },
     setAllBlogs: (state, action) => {
+      console.log("Setting My blogs ",action.payload);
       state.allBlogs = action.payload;
     },
     setMyBlogs: (state, action) => {
+      console.log("Setting All Blogs ",action.payload);
       state.myBlogs = action.payload;
     },
   },
 });
 
 export const { addBlog, deleteBlog, updateBlog, setAllBlogs, setMyBlogs } =
-  addressesSlice.actions;
-export default addressesSlice.reducer;
+blogSlice.actions;
+export default blogSlice.reducer;
