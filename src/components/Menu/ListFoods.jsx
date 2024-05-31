@@ -56,7 +56,7 @@ function ListFoods({ toggleFilter }) {
 
             {/*=============== Foods Listing ===============*/}
             <div>
-                <main className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 '>
+                <main className='grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3 '>
                     {
                         foodsOnCurrPage?.map((food) => (
                             <div key={food.id} className='rounded-lg max-h-[69vw] sm:max-h-[45vw] lg:max-h-[30vw] xl:max-h-[25vw]'>
