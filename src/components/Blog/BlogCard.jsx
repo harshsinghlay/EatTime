@@ -30,7 +30,7 @@ function BlogCard({ id, title, content, category, date }) {
                             className="line-clamp-1 text-nowrap overflow-ellipsis  pb-1 font-medium text-lg lg:hover:text-indigo-600 transition duration-500 ease-in-out inline-block">
                             {title}
                         </p>
-                        <p className="text-gray-500 text-sm line-clamp-3">
+                        <p className="text-gray-500 text-sm line-clamp-4">
                             {parse(content)}
                         </p>
                     </div>
