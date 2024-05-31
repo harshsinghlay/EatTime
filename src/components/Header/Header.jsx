@@ -156,7 +156,7 @@ function Header() {
                                 <div className='lg:p-1.5 lg:rounded-full lg:bg-orange-400 lg:text-black lg:active:text-white active:text-orange-400'>
                                     <HiOutlineShoppingBag size={30} className='' />
                                 </div>
-                                <div className='select-none lg:hidden absolute px-1 rounded-full -top-1 -right-2 bg-orange-400 w-fit text-xs'>{cart?.length}</div>
+                                {cart?.length > 0 && <div className='select-none lg:hidden absolute px-1 rounded-full -top-1 -right-2 bg-orange-400 w-fit text-xs'>{cart?.length}</div>}
                             </Link>
 
                             <div className='hidden lg:block text-sm'>
