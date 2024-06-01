@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { FaHeart, FaRegHeart } from '../../assets/icons/icons'
+import { FaHeart, FaRegHeart, LiaRupeeSignSolid } from '../../assets/icons/icons'
 import { useNavigate, useParams } from 'react-router';
 import { useDispatch, useSelector } from 'react-redux';
 import { addToCart } from '../../redux/features/food/cartSlice';
@@ -118,8 +118,8 @@ function FoodDetail() {
                 </span>
               </div>
               <div className='flex items-center text-lg xl:text-xl'>
-                <span className='font-semibold'>${food?.price && food?.price.toFixed(2)}</span>
-                <span className=' pl-1 text-sm'>${food?.price && (food?.price + 20).toFixed(2)}</span>
+                <span className='font-semibold flex items-center'><LiaRupeeSignSolid />{food?.price && food?.price.toFixed(2)}</span>
+                <span className='pl-1 text-sm flex items-center'><LiaRupeeSignSolid />{food?.price && (food?.price + 20).toFixed(2)}</span>
               </div>
             </div>
 
