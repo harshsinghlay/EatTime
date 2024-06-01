@@ -56,7 +56,7 @@ function DashboardOptions() {
 
       {/*========= Dashboard =========*/}
       <section >
-        <p className='text-sm   text-gray-500'>DASHBOARD</p>
+        <p className='text-xs text-gray-500'>DASHBOARD</p>
         <div className='flex flex-col gap-4 py-4'>
           {dashboardLinks.map((link, index) => (
             <NavLink to={link.url}
@@ -64,10 +64,10 @@ function DashboardOptions() {
               className={({ isActive }) => `${isActive ? "text-red-500" : "text-gray-600"} flex justify-between gap-4 items-center text-sm sm:text-base lg:text-sm `}
             >
               <div className='flex gap-2 items-center '>
-                <span className='text-xl lg:text-lg'>{link.icon}</span>
-                <span className='text-lg lg:text-base'>{link.linkname}</span>
+                <span className='text-lg'>{link.icon}</span>
+                <span className='text-base'>{link.linkname}</span>
               </div>
-              <div className='text-lg lg:text-base'>{link.value}</div>
+              <div className='text-base'>{link.value}</div>
             </NavLink>
           ))}
         </div>
@@ -75,7 +75,7 @@ function DashboardOptions() {
 
       {/*========= Account Settings =========*/}
       <section >
-        <p className='text-sm  text-gray-500'>ACCOUNT SETTINGS</p>
+        <p className='text-xs  text-gray-500'>ACCOUNT SETTINGS</p>
         <div className='flex flex-col gap-4 py-4'>
           {accountLinks.map((link, index) => (
             <NavLink to={link.url}
@@ -83,10 +83,10 @@ function DashboardOptions() {
               className={({ isActive }) => `${isActive ? "text-red-500" : "text-gray-600"} flex justify-between gap-4 items-center text-sm sm:text-base lg:text-sm `}
             >
               <div className='flex gap-2 items-center '>
-                <span className='text-xl lg:text-lg'>{link.icon}</span>
-                <span className='text-lg lg:text-base'>{link.linkname}</span>
+                <span className='text-lg'>{link.icon}</span>
+                <span className='text-base'>{link.linkname}</span>
               </div>
-              <div className='text-lg lg:text-base'>{link.value}</div>
+              <div className='text-base'>{link.value}</div>
             </NavLink>
           ))}
         </div>
