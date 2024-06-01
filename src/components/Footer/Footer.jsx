@@ -26,9 +26,9 @@ function Footer() {
             </div>
             <div className='min-w-80 w-[80%] lg:min-w-0'>
               {/*=========== Email Form ===========*/}
-              <form onSubmit={handleSubmit(formHandler)} className='bg-white flex items-center justify-between py-0.5 px-1  rounded-full overflow-hidden'>
+              <form onSubmit={handleSubmit(formHandler)} className='overflow-auto  bg-white flex items-center justify-between py-0.5 px-1  rounded-full '>
                 <input {...register('email')} className='grow px-3 py-1 rounded-full lg:rounded-none outline-none cursor pointer text-black placeholder:text-sm placeholder:text-gray-400 lg:max-w-[70%] ' type="email" placeholder='Your email' />
-                <button type='submit' className='bg-orange-400 py-2 px-4 rounded-full active:text-black lg:hover:bg-orange-500'>GO</button>
+                <button type='submit' className='bg-orange-400 py-2 px-4 rounded-full active:text-black lg:hover:bg-orange-500 block'>GO</button>
               </form>
             </div>
             <div className='flex justify-center gap-2'>
