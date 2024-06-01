@@ -124,7 +124,7 @@ function Home() {
                                 <div class="absolute  w-full h-full bg-black opacity-30 lg:group-hover:opacity-0 duration-200"></div>
                                 <div className="absolute flex h-full w-full">
                                     <div className="font-poppins text-white  pl-8 pt-8 ">
-                                        <p className='text-[1.8em] sm:text-[2.8em] font-semibold pb-3'><span className='text-[.5em] block font-normal text-gray-300'>NEW COLLECTION</span><span className='block'>ORIGINAL</span> <span className='-mt-2  lg:-mt-5 block'>AMERICAN</span> <span className='-mt-2 lg:-mt-5  block'>BURGER</span> <span className='block text-[.7em] font-extralight'>from $6.99</span></p>
+                                        <p className='text-[1.8em] sm:text-[2.8em] font-semibold pb-3'><span className='text-[.5em] block font-normal text-gray-300'>NEW COLLECTION</span><span className='block'>ORIGINAL</span> <span className='-mt-2  lg:-mt-5 block'>AMERICAN</span> <span className='-mt-2 lg:-mt-5  block'>BURGER</span> <span className='flex items-center text-[.7em] font-extralight'>from<LiaRupeeSignSolid/>149</span></p>
                                         <Link to='/menu/burger' className='px-[1em] py-[.2em] sm:px-[2.4em] sm:py-[.4em] bg-orange-400 rounded-sm text-[1em] lg:hover:scale-95 active:text-black lg:hover:bg-orange-500'>Order Now</Link>
                                     </div>
                                 </div>
@@ -143,7 +143,7 @@ function Home() {
                                 <div class="absolute  w-full h-full bg-black opacity-30 lg:group-hover:opacity-0 duration-200"></div>
                                 <div className="absolute flex items-end h-full w-full ">
                                     <Link to='/menu/pizza' className="font-poppins text-white pb-8 pl-7 lg:group-hover:text-orange-400">
-                                        <p className='text-[1.7em]'>Italian <span className='block -mt-1'>Spicy</span> <span className='block -mt-1'>Pizza</span> <span className='block -mt-1 text-orange-400'>$7.99</span></p>
+                                        <p className='text-[1.7em]'>Italian <span className='block -mt-1'>Spicy</span> <span className='block -mt-1'>Pizza</span> <span className='flex items-center -mt-1 text-orange-400'><LiaRupeeSignSolid/>199</span></p>
                                     </Link>
                                 </div>
                             </section>
