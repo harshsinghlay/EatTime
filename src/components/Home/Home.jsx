@@ -190,7 +190,7 @@ function Home() {
 
                 {/*============= Banner for Deal of the Day =============*/}
                 <section className='pb-10 bg-white'>
-                    <div className='relative bg-cover ' style={{ backgroundImage: `url(${img.img7})` }}>
+                    <div className='relative bg-cover bg-center' style={{ backgroundImage: `url(${img.img7})` }}>
                         <div className='absolute w-full h-full bg-black opacity-20'></div>
                         <div className='z-10 min-h-[60vw] sm:min-h-[30vw] xl:min-h-[26vw] flex flex-col justify-center items-center font-poppins text-center'>
                             <p className=" text-orange-400 text-center text-lg md:text-xl xl:text-2xl tracking-widest">The Product</p>
