@@ -65,9 +65,9 @@ function DashboardOptions() {
             >
               <div className='flex gap-2 items-center '>
                 <span className='text-lg'>{link.icon}</span>
-                <span className='text-base'>{link.linkname}</span>
+                <span className='text-base lg:text-sm'>{link.linkname}</span>
               </div>
-              <div className='text-base'>{link.value}</div>
+              <div className='text-base lg:text-sm'>{link.value}</div>
             </NavLink>
           ))}
         </div>
@@ -84,9 +84,9 @@ function DashboardOptions() {
             >
               <div className='flex gap-2 items-center '>
                 <span className='text-lg'>{link.icon}</span>
-                <span className='text-base'>{link.linkname}</span>
+                <span className='text-base lg:text-sm'>{link.linkname}</span>
               </div>
-              <div className='text-base'>{link.value}</div>
+              <div className='text-base lg:text-sm'>{link.value}</div>
             </NavLink>
           ))}
         </div>
