@@ -5,18 +5,19 @@ import {
   IoIosArrowBack,
   IoIosArrowForward,
   IoIosArrowRoundForward,
+  LiaRupeeSignSolid,
 } from "../../assets/icons/icons";
 import { Link, useOutletContext } from 'react-router-dom'
 import { useSelector } from 'react-redux';
 
-function OrderCard({ orderId, status, price, date }) {
+function OrderCard({ orderId, status, bill , date }) {
   return (
     <Link to={`/ordersummary/${orderId}`}>
       <div className='grid grid-cols-2 sm:grid-cols-5 gap-2   font-poppins  py-3 bg-white overflow-hidden '>
         <span className='flex items-center line-clamp-1 overflow-hidden text-nowrap'>#{orderId}</span>
         <span className='px-3 py-1 bg-purple-200 text-xs text-gray-700 rounded-full  place-items place-self-center'>{status}</span>
         <span className='sm:place-self-center line-clamp-1  text-sm text-gray-700 '>{date}</span>
-        <span className='px-3 py-[2px] place-self-center text-sm text-gray-700'>${Number(price)?.toFixed(2)}</span>
+        <span className='px-3 py-[2px] place-self-center text-sm text-gray-700 flex items-center'><LiaRupeeSignSolid />{Number(bill.subTotal)?.toFixed(2)}</span>
         <span className='place-self-center text-3xl text-gray-400 hidden sm:block'><IoIosArrowRoundForward /></span>
       </div>
     </Link>

@@ -10,7 +10,7 @@ const initialState = {
     paymentMethod: "",
     date: "",
     time: "",
-    price: 0,
+    bill : {},
   },
   orders: [],
 };
