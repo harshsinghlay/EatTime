@@ -45,7 +45,7 @@ function MainCarousel() {
                     <div className='w-[70%] sm:w-[60%] md:w-[50%] xl:w-[45%] h-full flex justify-center items-center  font-poppins text-white'>
                         <div className='flex flex-col lg:gap-1'>
                             <h1 className='font-semibold duration-500 sm:text-2xl xl:text-5xl text-xl md:text-4xl '>{slides[currentIndex].title1}<span className='block text-orange-400 duration-500'>{slides[currentIndex].title2}</span></h1>
-                            <p className='xl:text-lg  text-gray-400 duration-500 text-xs sm:text-sm md:text-base lg:text-xl lg:leading-6 '>{slides[currentIndex].description}</p>
+                            <p className='xl:text-lg  text-gray-400 duration-500 text-xs sm:text-sm md:text-base lg:text-xl lg:leading-6 line-clamp-3 '>{slides[currentIndex].description}</p>
                             <div className=' mt-3 '>
                                 <Link to={"/menu"} className=' px-3 md:px-6 lg:px-9 lg:py-2 py-1  bg-orange-400 rounded-sm md:text-lg xl:text-xl lg:hover:scale-95 active:text-black lg:hover:bg-orange-500'>Order Now</Link>
                             </div>
