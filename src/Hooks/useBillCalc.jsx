@@ -21,7 +21,7 @@ function useBillCalc() {
         if (cart.length > 0) {
             setCalculatedValues(calculateValues());
         }
-    }, [cart]);
+    }, [cart.length]);
     return calculatedValues
 }
 
