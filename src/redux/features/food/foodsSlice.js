@@ -43,7 +43,7 @@ const foodsSlice = createSlice({
     },
     removeFromWishlist: (state, action) => {
       const id = action.payload;
-      state.wishlist.filter((item) => item.id !== id);
+      state.wishlist = state.wishlist.filter((item) => item.id !== id);
     },
     setSortingOrder: (state, action) => {
       state.sortingOrder = action.payload;
