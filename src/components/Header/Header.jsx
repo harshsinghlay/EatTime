@@ -142,7 +142,7 @@ function Header() {
                                             (<div className='w-full bg-gray-100 max-h-[60vh] overflow-y-scroll py-2 px-1 space-y-2'>
                                                 {searchFoodsData.map((item, index) => (
                                                     <div key={index} className='shadow-md'>
-                                                        <SearchFoodCard {...item} />
+                                                        <SearchFoodCard {...item} toggleSerachBox={toggleSerachBox} />
                                                     </div>
                                                 ))}
                                             </div>) :
