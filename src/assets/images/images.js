@@ -21,6 +21,7 @@ import client1 from "./client1.jpeg";
 import client2 from "./client2.jpeg";
 import client3 from "./client3.jpeg";
 import contact from './contact.jpg';
+import fallbackimage from './fallbackimage.jpeg';
 
 export default {
   img1,
@@ -46,4 +47,5 @@ export default {
   client2,
   client3,
   contact,
+  fallbackimage
 };

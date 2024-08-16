@@ -35,7 +35,7 @@ function ListFoods({ toggleFilter }) {
         <div className='py-7 flex flex-col gap-6 lg:gap-5'>
             {/*=========== Sort By Buttons ===========*/}
             <div className='bg-gray-100 flex justify-end sm:justify-between items-center py-5 px-4 sm:px-6 font-poppins text-gray-800'>
-                <div className='hidden sm:block'>Showing {foodsOnCurrPage.length} of {filteredFoods.length} items</div>
+                <div className='hidden sm:block'> {`Showing ${firstFoodIndex + 1}-${Math.min(lastFoodIndex, filteredFoods.length)} of ${filteredFoods.length} items`}</div>
                 <div className='hidden items-center gap-2 lg:flex'>
                     <div>Sort by</div>
                     <div className='bg-white rounded-full px-4 '>
@@ -73,7 +73,7 @@ function ListFoods({ toggleFilter }) {
             {/*=============== Pagination Buttons ===============*/}
             <div>
                 <div className=' bg-gray-100 flex flex-col gap-3 lg:flex-row justify-between items-center py-5 px-6 font-poppins text-gray-800 text-sm text-normal sm:text-base'>
-                    <div>Showing {currentPage}-{totalPages} of {filteredFoods.length} items</div>
+                    <div>{`Showing ${currentPage}-${totalPages} pages`}</div>
                     <div className='flex items-center gap-2'>
                         <button onClick={prevPage} className="p-4 bg-white rounded-sm"><IoIosArrowBack /></button>
                         <button onClick={nextPage} className="p-4 bg-white rounded-sm"><IoIosArrowForward /></button>

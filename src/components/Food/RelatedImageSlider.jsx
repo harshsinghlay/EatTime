@@ -3,6 +3,7 @@ import Slider from "react-slick";
 import { IoIosArrowBack, IoIosArrowForward } from "../../assets/icons/icons";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import images from '../../assets/images/images';
 
 
 function RelatedImageSlider({ setHeroImage, sliderImages = [] }) {
@@ -40,7 +41,12 @@ function RelatedImageSlider({ setHeroImage, sliderImages = [] }) {
             <Slider ref={arrowRef} {...settings} >
                 {sliderImages.map((img, index) => (
                     <div key={index} onClick={() => setHeroImage(img)} >
-                        <img src={img} className="w-full h-full " alt="" />
+                        <img src={img} 
+                        onError={(e) => {
+                            e.target.src =
+                            images?.fallbackimage;
+                          }}
+                        className="w-full h-full " alt="" />
                     </div>
                 ))}
             </Slider>

@@ -7,7 +7,9 @@ import { addToWishlist, removeFromWishlist } from '../../redux/features/food/foo
 import { Rating } from '../index'
 import toast from 'react-hot-toast';
 import RelatedImageSlider from './RelatedImageSlider';
-import { FoodCard1 } from '../index'
+import { FoodCard1 } from '../index';
+import images from '../../assets/images/images';
+
 
 function FoodDetail() {
   const { id } = useParams()
@@ -95,7 +97,14 @@ function FoodDetail() {
         <section className='max-w-[91%] mx-auto font-poppins grid grid-cols-1 md:grid-cols-2'>
           {/*======== Food Images  ========*/}
           <div>
-            <div className='h-[80vw] md:h-[35vw]  bg-black bg-cover rounded-md' style={{ backgroundImage: `url(${mainImage})` }}>
+            <div className='h-[80vw] md:h-[35vw]' 
+            >
+              <img src={mainImage} className='h-full w-full' 
+                 onError={(e) => {
+                  e.target.src =
+                  images?.fallbackimage;
+                }}
+              alt="" />
             </div>
             <div >
               <RelatedImageSlider
